@@ -19,6 +19,18 @@ function createRoutes() {
 			name: 'home',
 			handler: () => {},
 		},
+		'/map': {
+			name: 'map',
+			handler: request => {
+				request.context.next();
+			},
+			children: {
+				'/cog-rgb-tiff-32': {
+					name: 'cog-rgb-tiff-32',
+					handler: () => {},
+				},
+			},
+		},
 	};
 }
 

@@ -2,6 +2,8 @@ import {config as getConfig} from '@gisatcz/ptr-core';
 import {Action as CommonAction} from '@gisatcz/ptr-state';
 import {appKey} from '../constants/app';
 
+import router from './router/actions';
+
 import * as APPTEMPLATEREPLACESTORENAME from './APPTEMPLATEREPLACESTORENAME/actions'; // eslint-disable-line
 
 require('dotenv').config();
@@ -76,6 +78,7 @@ function init(path) {
 export default {
 	...CommonAction,
 	init,
+	router,
 	APPTEMPLATEREPLACESTORENAME: {
 		...APPTEMPLATEREPLACESTORENAME,
 	},
