@@ -194,7 +194,7 @@ const getActiveScreen = createSelector([getCurrent], routerState => {
 		}
 		return screenKey;
 	};
-	debugger;
+
 	if (validScreens.includes(name)) {
 		return getScreenByRouteName(name);
 	} else {

@@ -5,15 +5,19 @@ module.exports = function override(config) {
 	config.resolve = {
 		alias: {
 			// react:
-			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-charts/node_modules/react',
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/react',
 			// 'react-dom':
-			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-charts/node_modules/react-dom',
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/react-dom',
+			// '@luma.gl/webgl':
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@luma.gl/webgl',
+			// '@deck.gl/layers':
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@deck.gl/layers',
 			// '@gisatcz/ptr-charts': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-charts',
 			// '@gisatcz/cross-package-react-context':
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/cross-package-react-context',
 			// '@gisatcz/ptr-core': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-core',
 			// '@gisatcz/ptr-utils': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-utils',
-			// '@gisatcz/ptr-state': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-state',
+			// '@gisatcz/ptr-maps': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps',
 		},
 		fallback: {
 			fs: false,
