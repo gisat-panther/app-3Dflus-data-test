@@ -28,7 +28,7 @@ let minZoom;
 let maxZoom;
 let tileCount;
 let resolution;
-let loaded;
+// let loaded;
 
 // interface CogTileLayerProps extends LayerProps {
 //     url: string,
@@ -148,7 +148,7 @@ class CogTileLayer extends deckgl_core.CompositeLayer {
 		tileCount = img.tileCount;
 		resolution = img.resolution;
 		//console.log(tileSize);
-		loaded = true;
+		// loaded = true;
 		this.updateState();
 		//this.renderLayers();
 	}
@@ -156,13 +156,9 @@ class CogTileLayer extends deckgl_core.CompositeLayer {
 	async initImage(address) {
 		src = new SourceHttp(address);
 		cog = await CogTiff.create(src);
-		console.log(cog);
 		img = cog.getImage(cog.images.length - 1);
 		tileSize = img.tileSize.width;
 		possibleResolutions = this.generatePossibleResolutions(tileSize, 32);
-
-		console.log(img.bbox);
-		console.log(img);
 
 		var initialZoom = this.indexOfClosestTo(
 			possibleResolutions,
@@ -236,7 +232,6 @@ class CogTileLayer extends deckgl_core.CompositeLayer {
 			);
 		}
 
-		console.log('xxx_tileCount', tileCount);
 		const tileWidth = tileSize;
 		const tilesX = tileCount.x;
 		const tilesY = tileCount.y;

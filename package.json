@@ -1,7 +1,7 @@
 {
 	"name": "APP-TEMPLATE-REPLACE-APP-REPO-ID",
 	"description": "APP-TEMPLATE-REPLACE-APP-REPO-DESCRIPTION",
-	"homepage": ".",
+	"homepage": "https://gisat.github.io/app-3Dflus-data-test/",
 	"keywords": [
 		"panther",
 		"gisat",
@@ -34,6 +34,7 @@
 		"analytics": "^0.8.1",
 		"cross-env": "^7.0.3",
 		"crypto-browserify": "^3.12.0",
+		"gh-pages": "^4.0.0",
 		"history": "^5.3.0",
 		"jpeg-js": "^0.4.4",
 		"os-browserify": "^0.3.0",
@@ -51,7 +52,6 @@
 	"devDependencies": {
 		"@cra-express/core": "^5.0.2",
 		"@gisatcz/prettier-config": "0.0.3",
-		"cra-universal": "^5.0.2",
 		"css-loader": "^6.7.3",
 		"dotenv": "^16.0.3",
 		"eslint": "^8.32.0",
@@ -75,11 +75,7 @@
 	"scripts": {
 		"analyze": "source-map-explorer 'build/static/js/*.js'",
 		"proxy": "lcp --proxyUrl https://dromas-dev.gisat.cz --port 4444 --origin http://localhost:3000 --proxyPartial \"\" --credentials",
-		"proxy:ssr": "lcp --proxyUrl https://ptr.gisat.cz --port 4444 --origin http://localhost:3001 --proxyPartial \"\" --credentials",
 		"start": "react-app-rewired start",
-		"crau:start": "cra-universal start",
-		"start:ssr": "react-app-rewired start",
-		"build:ssr": "cra-universal build",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -b gh-pages -d build",
 		"build": "cross-env NODE_ENV=production react-app-rewired build",
