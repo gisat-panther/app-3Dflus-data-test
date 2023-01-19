@@ -28,7 +28,6 @@
 		"@gisatcz/ptr-components": "^1.5.0",
 		"@gisatcz/ptr-core": "^1.7.2",
 		"@gisatcz/ptr-maps": "^1.18.0",
-		"@gisatcz/ptr-router": "^0.3.0",
 		"@gisatcz/ptr-state": "^2.5.0",
 		"@gisatcz/ptr-utils": "^1.6.0",
 		"analytics": "^0.8.1",
@@ -46,6 +45,7 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-helmet": "^6.1.0",
+		"react-router-dom": "^6.7.0",
 		"url": "^0.11.0",
 		"use-analytics": "0.0.5"
 	},

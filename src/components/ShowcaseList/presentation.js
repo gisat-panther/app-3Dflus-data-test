@@ -1,27 +1,15 @@
-import PropTypes from 'prop-types';
-import Link from '../common/Link';
-import {getRouter} from '../../router';
+import {Link} from 'react-router-dom';
 
 import './style.scss';
 
 const AppContent = () => {
-	const router = getRouter();
 	return (
 		<div className={'APP-TEMPLATE-REPLACE-APP-STYLE-PREFIX-App ptr-light'}>
-			<Link
-				name={'cog-rgb-tiff-32'}
-				router={router}
-				recoverParams={true}
-				paramsFilter={['tags', 'detailsViewKey']}
-			>
-				cog-rgb-tiff-32
-			</Link>
+			<Link to={'./map/tiff-32bit'}>cog-rgb-tiff-32</Link>
 		</div>
 	);
 };
 
-AppContent.propTypes = {
-	activeScreen: PropTypes.string,
-};
+AppContent.propTypes = {};
 
 export default AppContent;

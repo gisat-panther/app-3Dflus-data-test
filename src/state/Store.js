@@ -16,8 +16,6 @@ import {
 	isServer,
 } from '@gisatcz/ptr-core';
 
-import router from './router/reducers';
-
 import {initApp} from '../app';
 
 import * as APPTEMPLATEREPLACESTORENAME from './APPTEMPLATEREPLACESTORENAME/reducers'; // eslint-disable-line
@@ -44,7 +42,6 @@ function createMiddleware(requestCounter, withoutLogger) {
 function createReducer() {
 	return combineReducers({
 		...baseStores,
-		router,
 		APPTEMPLATEREPLACESTORENAME: APPTEMPLATEREPLACESTORENAME,
 	});
 }

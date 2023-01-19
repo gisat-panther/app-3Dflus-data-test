@@ -8,7 +8,6 @@ import {AppContainer} from '@gisatcz/ptr-components';
 import Action from './state/Action';
 import {init as initCore} from './core';
 import {appKey} from './constants/app';
-import {initRouter} from './router';
 
 // base styles need to be imported before all components
 import '@gisatcz/ptr-core/lib/styles/reset.css';
@@ -19,10 +18,8 @@ import AppContent from './components/AppContent';
 
 const path = process.env.PUBLIC_URL;
 
-function initApp(Store, {absPath, isPreloaded, currentUrl, navHandler}) {
-	initCore({
-		router: initRouter(absPath, currentUrl, Store, isPreloaded, navHandler),
-	});
+function initApp(Store) {
+	initCore({});
 	Store.dispatch(Action.init(path));
 }
 
