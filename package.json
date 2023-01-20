@@ -24,7 +24,7 @@
 		"@analytics/google-analytics": "^1.0.5",
 		"@chunkd/source-http": "^10.0.2",
 		"@cogeotiff/core": "^7.2.1",
-		"@gisatcz/deckgl-geolib": "^0.0.1",
+		"@gisatcz/deckgl-geolib": "^0.0.2",
 		"@gisatcz/ptr-components": "^1.5.0",
 		"@gisatcz/ptr-core": "^1.7.2",
 		"@gisatcz/ptr-maps": "^1.18.0",
@@ -46,6 +46,7 @@
 		"react-dom": "^18.2.0",
 		"react-helmet": "^6.1.0",
 		"react-router-dom": "^6.7.0",
+		"typescript": "^4.9.4",
 		"url": "^0.11.0",
 		"use-analytics": "0.0.5"
 	},
