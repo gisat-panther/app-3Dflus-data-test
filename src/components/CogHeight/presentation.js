@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {DeckGlMap} from '@gisatcz/ptr-maps';
-import {CogTileLayer} from '../../deckGlLayers/CogTileLayer/CogTileLayer.ts';
+import {CogTileLayer} from '../../deckGlLayers/CogTileLayer/CogTileLayer';
 
 import './style.scss';
 const CogRgb = ({url, view}) => {

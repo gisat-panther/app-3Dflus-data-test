@@ -24,7 +24,7 @@
 		"@analytics/google-analytics": "^1.0.5",
 		"@chunkd/source-http": "^10.0.2",
 		"@cogeotiff/core": "^7.2.1",
-		"@gisatcz/deckgl-geolib": "^0.0.2",
+		"@gisatcz/deckgl-geolib": "^0.0.3",
 		"@gisatcz/ptr-components": "^1.5.0",
 		"@gisatcz/ptr-core": "^1.7.2",
 		"@gisatcz/ptr-maps": "^1.18.0",

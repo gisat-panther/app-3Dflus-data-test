@@ -82,9 +82,9 @@ class CogTileLayer extends CompositeLayer {
             getTileData: (tileData: any) => {
                 //console.log(tileData);
                 return this.getTileAt(
-                    tileData.x,
-                    tileData.y,
-                    tileData.z
+                    tileData.index.x,
+                    tileData.index.y,
+                    tileData.index.z
                 );
             },
 
