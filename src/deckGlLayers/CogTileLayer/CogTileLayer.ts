@@ -1,8 +1,7 @@
-import { CompositeLayer } from '@deck.gl/core'
-import {BitmapLayerProps} from '@deck.gl/layers/typed';
+import { LayerProps, CompositeLayer } from '@deck.gl/core'
 import { TileLayer } from '@deck.gl/geo-layers'
 import { BitmapLayer } from '@deck.gl/layers';
-import {SourceHttp} from '@chunkd/source-http';
+import { SourceHttp } from '@chunkd/source-http';
 import { CogTiff, CogTiffImage } from '@cogeotiff/core';
 import jpeg from 'jpeg-js';
 //import { inflate } from "deflate-js";
@@ -34,7 +33,7 @@ let loaded: boolean;
 
 const decoder = new LZWDecoder();
 
-interface CogTileLayerProps extends BitmapLayerProps {
+interface CogTileLayerProps extends LayerProps {
     url: string,
     loaded?: boolean;
 }
