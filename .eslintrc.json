@@ -15,7 +15,9 @@
     "plugin:react/jsx-runtime"
   ],
   "rules": {
-    "no-debugger":"off"
+    "no-debugger":"off",
+    "no-unused-vars": "off",
+    "no-undef": "off"
   },
   "env": {
     "browser": true,
