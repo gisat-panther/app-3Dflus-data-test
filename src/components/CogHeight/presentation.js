@@ -1,24 +1,32 @@
 import PropTypes from 'prop-types';
-import {DeckGlMap} from '@gisatcz/ptr-maps';
-import {CogTileLayer} from '../../deckGlLayers/CogTileLayer/CogTileLayer';
+import Map from '../common/Map/presentation';
+import {TerrainLayer} from '@deck.gl/geo-layers';
+// import {CogTileLayer} from '../../deckGlLayers/CogTileLayer/CogTileLayer.ts';
+import {useGeoData} from '@gisatcz/deckgl-geolib';
 
-import './style.scss';
 const CogRgb = ({url, view}) => {
-	const layers = [new CogTileLayer({url})];
+	const opacity = 0;
+	const geoObject = useGeoData(url, true, opacity);
+	const layers = [
+		new TerrainLayer({
+			id: 'terrain-layer',
+			elevationDecoder: {
+				rScaler: 6553.6,
+				gScaler: 25.6,
+				bScaler: 0.1,
+				offset: -10230,
+			},
+			material: {diffuse: 1},
+			meshMaxError: 3, // SET TO 1 FOR MAX QUALITY.
+			bounds: geoObject.bbox,
+			elevationData: geoObject.heightMap,
+			texture: geoObject.image,
+		}),
+	];
 
 	return (
 		<div className={'APP-TEMPLATE-REPLACE-APP-STYLE-PREFIX-App ptr-light'}>
-			<DeckGlMap
-				view={view}
-				backgroundLayer={{
-					key: 'background-osm',
-					type: 'wmts',
-					options: {
-						url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
-					},
-				}}
-				layers={layers}
-			></DeckGlMap>
+			<Map layers={layers} view={view} />
 		</div>
 	);
 };

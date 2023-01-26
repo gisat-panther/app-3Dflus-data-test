@@ -3,7 +3,8 @@ import ShowcaseList from '../ShowcaseList';
 import rasterDataConfig from '../../data/raster';
 
 import CogRgb from '../CogRgb';
-// import CogHeight from '../CogHeight';
+import CogHeight from '../CogHeight';
+import Vector from '../Vector';
 
 import './style.scss';
 
@@ -16,20 +17,52 @@ const AppContent = () => {
 	const dataUrlDestination = 'url_public';
 	const rasterPathPrefix = 'map/raster/';
 	const rasterRoutes = rasterDataConfig.map(c => {
-		return (
-			<Route
-				key={c.key}
-				exact
-				path={`${rasterPathPrefix}${c.key}`}
-				element={
-					<CogRgb
-						// type={'jpeg'}
-						url={c[dataUrlDestination]}
-						view={c.view}
-					/>
-				}
-			/>
-		);
+		if (c.type === 'rgbCOG') {
+			return (
+				<Route
+					key={c.key}
+					exact
+					path={`${rasterPathPrefix}${c.key}`}
+					element={
+						<CogRgb
+							// type={'jpeg'}
+							url={c[dataUrlDestination]}
+							view={c.view}
+						/>
+					}
+				/>
+			);
+		} else if (c.type === 'heightCOG') {
+			return (
+				<Route
+					key={c.key}
+					exact
+					path={`${rasterPathPrefix}${c.key}`}
+					element={
+						<CogHeight
+							// type={'jpeg'}
+							url={c[dataUrlDestination]}
+							view={c.view}
+						/>
+					}
+				/>
+			);
+		} else if (c.type === 'vector') {
+			return (
+				<Route
+					key={c.key}
+					exact
+					path={`${rasterPathPrefix}${c.key}`}
+					element={
+						<Vector
+							// type={'jpeg'}
+							url={c[dataUrlDestination]}
+							view={c.view}
+						/>
+					}
+				/>
+			);
+		}
 	});
 
 	return (
