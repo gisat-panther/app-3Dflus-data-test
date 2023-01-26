@@ -1,7 +1,16 @@
 {
   "files": {
-    "main.css": "/app-3Dflus-data-test/static/css/main.b8418888.css",
-    "main.js": "/app-3Dflus-data-test/static/js/main.57b1bc3d.js",
+    "main.css": "/app-3Dflus-data-test/static/css/main.2f1883e1.css",
+    "main.js": "/app-3Dflus-data-test/static/js/main.a94bd8f8.js",
+    "static/media/Esri_WorldImagery.png": "/app-3Dflus-data-test/static/media/Esri_WorldImagery.f44b15e0de6b83cfdbe7.png",
+    "static/media/Bing_Aerial.png": "/app-3Dflus-data-test/static/media/Bing_Aerial.1db8c29bcc0c460eeeb8.png",
+    "static/media/Esri_WorldTopoMap.png": "/app-3Dflus-data-test/static/media/Esri_WorldTopoMap.7360500a5142d67f6fdf.png",
+    "static/media/OpenStreetMap_Mapnik.png": "/app-3Dflus-data-test/static/media/OpenStreetMap_Mapnik.6208aac31249ed4fa79f.png",
+    "static/media/wikimedia.png": "/app-3Dflus-data-test/static/media/wikimedia.da7bc4904946a333e388.png",
+    "static/media/CartoDB_VoyagerNoLabels.png": "/app-3Dflus-data-test/static/media/CartoDB_VoyagerNoLabels.f7c3aa325d0477100a19.png",
+    "static/media/Esri_WorldGrayCanvas.png": "/app-3Dflus-data-test/static/media/Esri_WorldGrayCanvas.c51c0e6fd08bb7266253.png",
+    "static/media/CartoDB_DarkMatter.png": "/app-3Dflus-data-test/static/media/CartoDB_DarkMatter.5e6773a5768c9f98b424.png",
+    "static/media/noPreview.png": "/app-3Dflus-data-test/static/media/noPreview.aad37d1a73774e08c687.png",
     "static/media/marker-icon.png": "/app-3Dflus-data-test/static/media/marker-icon.2b3e1faf89f94a483539.png",
     "static/media/layers-2x.png": "/app-3Dflus-data-test/static/media/layers-2x.8f2c4d11474275fbc161.png",
     "static/media/layers.png": "/app-3Dflus-data-test/static/media/layers.416d91365b44e4b4f477.png",
@@ -10,11 +19,11 @@
     "static/media/triangle-up.svg": "/app-3Dflus-data-test/static/media/triangle-up.ad217d073e50d248acbc.svg",
     "static/media/b706a53c.svg": "/app-3Dflus-data-test/static/media/b706a53c.11180903a0d29261c0a0.svg",
     "static/media/triangle-down.svg": "/app-3Dflus-data-test/static/media/triangle-down.11180903a0d29261c0a0.svg",
-    "main.b8418888.css.map": "/app-3Dflus-data-test/static/css/main.b8418888.css.map",
-    "main.57b1bc3d.js.map": "/app-3Dflus-data-test/static/js/main.57b1bc3d.js.map"
+    "main.2f1883e1.css.map": "/app-3Dflus-data-test/static/css/main.2f1883e1.css.map",
+    "main.a94bd8f8.js.map": "/app-3Dflus-data-test/static/js/main.a94bd8f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8418888.css",
-    "static/js/main.57b1bc3d.js"
+    "static/css/main.2f1883e1.css",
+    "static/js/main.a94bd8f8.js"
   ]
 }
