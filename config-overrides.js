@@ -10,6 +10,14 @@ module.exports = function override(config) {
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/react-dom',
 			// '@luma.gl/webgl':
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@luma.gl/webgl',
+			// '@luma.gl/core':
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@luma.gl/core',
+			// '@deck.gl/geo-layers':
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@deck.gl/geo-layers',
+			// '@deck.gl/core':
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@deck.gl/core',
+			// '@luma.gl/webgl':
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@luma.gl/webgl',
 			// '@deck.gl/layers':
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@deck.gl/layers',
 			// '@gisatcz/ptr-charts': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-charts',

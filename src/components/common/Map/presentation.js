@@ -9,46 +9,69 @@ import {
 import {IconTool} from '@gisatcz/ptr-atoms';
 
 import './style.scss';
-import {useState} from 'react';
-
-const FlyTo = new deckgl_core.LinearInterpolator(['pitch']);
-// const FlyTo = new deckgl_core.LinearInterpolator();
+import {useRef, useState} from 'react';
 
 const Map = ({layers, view}) => {
-	const [stateView, setStateView] = useState({
-		...view,
-		// transitionInterpolator: FlyTo,
-		// transitionDuration: 10000,
-	});
 	const [viewIn3D, setViewIn3D] = useState(false);
+	const [stateVersion, setStateVersion] = useState(0);
+	const stateViewRef = useRef(view);
+
+	const removeViewTransitionRef = useRef(update => {
+		update.deckGlTransitionProperties = {};
+
+		stateViewRef.current = {
+			...stateViewRef.current,
+			deckGlTransitionProperties: {},
+		};
+	});
+
 	const toggle3DView = () => {
 		setViewIn3D(!viewIn3D);
-		setStateView({
-			...stateView,
+
+		const stateUpdate = {
+			...stateViewRef.current,
 			pitch: viewIn3D ? 0 : 60,
 			bearing: viewIn3D ? 0 : 0,
-			transitionInterpolator: FlyTo,
-			transitionDuration: 1000,
-			onTransitionEnd: () => {
-				console.log('xxx_trans_end');
+			deckGlTransitionProperties: {
+				transitionInterpolator: new deckgl_core.LinearInterpolator([
+					'pitch',
+					'bearing',
+				]),
+				transitionDuration: 700,
+				onTransitionEnd: removeViewTransitionRef.current,
 			},
-		});
+		};
+		stateViewRef.current = stateUpdate;
 	};
-	const FlyTo = new deckgl_core.FlyToInterpolator();
 
 	const updateStateView = view => {
-		console.log('xxx', view);
-		// setStateView({
-		// 	...stateView,
-		// 	...view,
-		// });
+		setStateVersion(stateVersion + 1);
+		stateViewRef.current = {
+			...stateViewRef.current,
+			...view,
+		};
 	};
 
 	return (
 		<div className={'APP-TEMPLATE-REPLACE-APP-STYLE-PREFIX-App ptr-light'}>
+			<div className="Flus-Map-Components">
+				<IconTool
+					className={`Flus-3Dview ${viewIn3D ? 'active' : ''}`}
+					onClick={() => toggle3DView()}
+					floating
+					medium
+					icon="ri-3D-view"
+				/>
+			</div>
 			<PresentationMap
 				mapComponent={DeckGlMap}
-				view={stateView}
+				view={stateViewRef.current}
+				layers={layers}
+				mapComponentProps={{
+					controller: {
+						dragRotate: viewIn3D,
+					},
+				}}
 				backgroundLayer={{
 					key: 'background-osm',
 					type: 'wmts',
@@ -56,23 +79,8 @@ const Map = ({layers, view}) => {
 						url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
 					},
 				}}
-				mapComponentProps={{
-					controller: {
-						dragRotate: viewIn3D,
-					},
-				}}
 				onViewChange={updateStateView}
-				layers={layers}
 			>
-				<div className="Flus-Map-Components">
-					<IconTool
-						className={`Flus-3Dview ${viewIn3D ? 'active' : ''}`}
-						onClick={() => toggle3DView()}
-						floating
-						medium
-						icon="ri-3D-view"
-					/>
-				</div>
 				<MapControls levelsBased zoomOnly className="" />
 				<MapScale className="" />
 			</PresentationMap>

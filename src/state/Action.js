@@ -31,45 +31,6 @@ function init(path) {
 		const config = getConfig(getAppEnvConfig());
 		dispatch(CommonAction.app.updateLocalConfiguration(config));
 		dispatch(CommonAction.app.setKey(appKey));
-
-		dispatch(CommonAction.app.loadConfiguration()).then(() => {
-			dispatch(
-				CommonAction.layerTemplates.useIndexed(
-					{
-						application: true,
-					},
-					null,
-					null,
-					1,
-					100,
-					'init'
-				)
-			);
-
-			dispatch(
-				CommonAction.periods.useIndexed(
-					{
-						application: true,
-					},
-					null,
-					null,
-					1,
-					100,
-					'init'
-				)
-			);
-
-			//
-			// Continue by settings app secific initialisation like setting active view
-			//
-
-			// const viewKey = Select.app.getConfiguration(getState(), 'initialViewKey');
-			// if (viewKey) {
-			// 	dispatch(CommonAction.views.useKeys([viewKey])).then(() => {
-			// 		dispatch(CommonAction.views.applyAndSetActive(viewKey, CommonAction));
-			// 	});
-			// }
-		});
 	};
 }
 
