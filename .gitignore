@@ -14,6 +14,7 @@
 /lib
 
 /public/static/media
+/public/static/data
 
 # misc
 .idea
