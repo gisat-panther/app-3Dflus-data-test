@@ -5,19 +5,8 @@ import geolib from '@gisatcz/deckgl-geolib';
 const CogBitmapLayer = geolib.CogBitmapLayer;
 
 import './style.scss';
-const CogRgb = ({url, view}) => {
+const CogRgb = ({url, view, options}) => {
 	const layerId = 'CogBitmapLayer';
-	const options = {
-		type: 'image',
-		useChannel: 5,
-		useColorsBasedOnValues: true,
-		clipLow: 0,
-		colorsBasedOnValues: [
-			[1, '#deebf7'],
-			[2, '#9ecae1'],
-			[3, '#3182bd'],
-		],
-	};
 	console.log('xxx_url', url);
 	const layers = [new CogBitmapLayer(layerId, url, options)];
 	console.log('xxx_layers', layers);
@@ -41,6 +30,7 @@ const CogRgb = ({url, view}) => {
 CogRgb.propTypes = {
 	url: PropTypes.string,
 	view: PropTypes.object,
+	options: PropTypes.object,
 };
 
 export default CogRgb;

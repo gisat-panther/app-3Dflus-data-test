@@ -27,6 +27,7 @@ const AppContent = () => {
 						<CogRgb
 							// type={'jpeg'}
 							url={c[dataUrlDestination]}
+							options={c.options}
 							view={c.view}
 						/>
 					}

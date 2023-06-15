@@ -90,7 +90,7 @@
 		"analyze": "source-map-explorer 'build/static/js/*.js'",
 		"proxy": "lcp --proxyUrl https://dromas-dev.gisat.cz --port 4444 --origin http://localhost:3000 --proxyPartial \"\" --credentials",
 		"start": "react-app-rewired start",
-		"_predeploy": "npm run build",
+		"predeploy": "npm run build && rimraf build/static/data",
 		"deploy": "gh-pages -b gh-pages -d build",
 		"build": "cross-env NODE_ENV=production react-app-rewired build",
 		"test": "react-scripts test",
