@@ -28,7 +28,7 @@
 		"@deck.gl/geo-layers": "^8.8.17",
 		"@deck.gl/layers": "^8.8.17",
 		"@deck.gl/react": "^8.9.18",
-		"@gisatcz/deckgl-geolib": "^1.2.0",
+		"@gisatcz/deckgl-geolib": "^1.3.0",
 		"@gisatcz/ptr-atoms": "^1.7.1",
 		"@gisatcz/ptr-components": "^1.5.0",
 		"@gisatcz/ptr-core": "^1.7.2",
@@ -58,7 +58,6 @@
 	"devDependencies": {
 		"@cra-express/core": "^5.0.2",
 		"@gisatcz/prettier-config": "0.0.3",
-		"browserify-zlib": "^0.2.0",
 		"buffer": "^6.0.3",
 		"css-loader": "^6.7.3",
 		"dotenv": "^16.0.3",
@@ -85,8 +84,7 @@
 		"stream-http": "^3.2.0",
 		"style-loader": "^3.3.1",
 		"url": "^0.11.1",
-		"url-loader": "^4.1.1",
-		"zlib": "^1.0.5"
+		"url-loader": "^4.1.1"
 	},
 	"scripts": {
 		"analyze": "source-map-explorer 'build/static/js/*.js'",
