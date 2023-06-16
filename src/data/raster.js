@@ -6,10 +6,10 @@ export default [
 			'gdal_translate efate.tif efate_deflate.tif -of COG -co compress=deflate -co TILING_SCHEME=GoogleMapsCompatible',
 		url_local: '/app-3Dflus-data-test/static/data/efate_deflate.tif',
 		url_public:
-			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/ortofoto/efate_deflate.tif',
+			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/versions/v3/Manila/jrc_gsw_mercator_comp_cog_deflate_float32.tif',
 		description: '',
 		view: {
-			center: {lat: -17.55763497384545, lon: 168.4525809704237}, //Porta Vila Island
+			center: {lat: 14.5991729, lon: 120.9089351}, //Porta Vila Island
 			boxRange: 4000,
 		},
 	},

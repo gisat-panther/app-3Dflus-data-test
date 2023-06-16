@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import Map from '../common/Map/presentation';
-import {TerrainLayer} from '@deck.gl/geo-layers';
-// import {CogTileLayer} from '../../deckGlLayers/CogTileLayer/CogTileLayer.ts';
-import {useGeoData} from '@gisatcz/deckgl-geolib';
+// import {TerrainLayer} from '@deck.gl/geo-layers';
+import geolib from '@gisatcz/deckgl-geolib';
 
+const CogTerrainLayer = geolib.CogTerrainLayer;
 const CogRgb = ({url, view}) => {
 	const opacity = 0;
 	const geoObject = useGeoData(url, true, opacity);
 	const layers = [
-		new TerrainLayer({
+		new CogTerrainLayer({
 			id: 'terrain-layer',
 			elevationDecoder: {
 				rScaler: 6553.6,

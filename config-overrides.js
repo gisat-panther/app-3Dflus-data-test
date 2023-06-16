@@ -8,8 +8,8 @@ module.exports = function override(config) {
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/react',
 			// 'react-dom':
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/react-dom',
-			// '@luma.gl/webgl':
-			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@luma.gl/webgl',
+			// '@gisatcz/deckgl-geolib':
+			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/deck.gl-geotiff',
 			// '@luma.gl/core':
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@luma.gl/core',
 			// '@deck.gl/geo-layers':
@@ -20,21 +20,41 @@ module.exports = function override(config) {
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@luma.gl/webgl',
 			// '@deck.gl/layers':
 			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps/node_modules/@deck.gl/layers',
-			// '@gisatcz/ptr-charts': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-charts',
-			// '@gisatcz/cross-package-react-context':
-			// 	'/Users/vojtadubrovsky/_WORK/GISAT/git/cross-package-react-context',
-			// '@gisatcz/ptr-core': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-core',
-			// '@gisatcz/ptr-utils': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-utils',
 			// '@gisatcz/ptr-maps': '/Users/vojtadubrovsky/_WORK/GISAT/git/ptr-maps',
 		},
 		fallback: {
-			fs: false,
-			crypto: require.resolve('crypto-browserify'),
-			path: require.resolve('path-browserify'),
-			os: require.resolve('os-browserify/browser'),
 			// process: require.resolve('process/browser'),
-			stream: false,
-			url: require.resolve('url/'),
+			// stream: false,
+			// http: require.resolve('url/'),
+			// https: require.resolve('url/'),
+			// url: false,
+			// zlib: false,
+			// url: require.resolve('url/'),
+
+			// worked
+			// fs: false,
+			// crypto: require.resolve('crypto-browserify'),
+			// path: require.resolve('path-browserify'),
+			// os: require.resolve('os-browserify/browser'),
+			// stream: require.resolve('stream-browserify'),
+			// url: require.resolve('url'),
+			// http: require.resolve('stream-http'),
+			// https: require.resolve('https-browserify'),
+			zlib: require.resolve('browserify-zlib'),
+			'process/browser': require.resolve('process/browser'),
+			// buffer: require.resolve('buffer/'),
+
+			url: require.resolve('url'),
+			// fs: require.resolve('fs'),
+			fs: false,
+			assert: require.resolve('assert'),
+			crypto: require.resolve('crypto-browserify'),
+			http: require.resolve('stream-http'),
+			https: require.resolve('https-browserify'),
+			os: require.resolve('os-browserify/browser'),
+			buffer: require.resolve('buffer/'),
+			stream: require.resolve('stream-browserify'),
+			encoding: require.resolve('encoding/'),
 		},
 	};
 	config.plugins = [
@@ -44,6 +64,9 @@ module.exports = function override(config) {
 		new webpack.ProvidePlugin({
 			process: 'process/browser',
 		}),
+		// new webpack.ProvidePlugin({
+		// 	Buffer: ['buffer', 'Buffer'],
+		// }),
 	];
 
 	return config;
