@@ -24,6 +24,191 @@ export default [
 			boxRange: 4000,
 		},
 	},
+	{
+		key: 'rio_cogeo_deflate_float32_heatmap_Manila_flood',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --config CHECK_DISK_FREE_SPACE=FALSE',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/versions/v3/Manila/jrc_gsw_mercator_comp_cog_deflate_float32.tif',
+		description: '',
+		options: { type:"image",
+			useChannel: 30,
+			useHeatMap:true,
+			colorScaleValueRange: [0, 3],
+			clipLow: 1,
+			colorScale: ['red', 'yellow']
+		},
+		view: {
+			center: {lat: 14.5991729, lon: 120.9089351}, //Porta Vila Island
+			boxRange: 4000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_float32_singleColorClipped_Manila_flood',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --config CHECK_DISK_FREE_SPACE=FALSE',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/versions/v3/Manila/jrc_gsw_mercator_comp_cog_deflate_float32.tif',
+		description: '',
+		options: { type:"image",
+			useChannel: 10,
+			useSingleColor: true,
+			clipLow: 1,
+			clipHigh: 3,
+			color: 'red',
+			clippedColor:[245, 245, 220, 80]
+		},
+		view: {
+			center: {lat: 14.5991729, lon: 120.9089351}, //Porta Vila Island
+			boxRange: 6000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_int16_heatmapCustomRange_Nepal_wetSnow',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --config CHECK_DISK_FREE_SPACE=FALSE --nodata 0 --zoom-level 16',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/snow_cover_cog/WET_SNOW_3857_2017-2021_cog_deflate_in16_zoom16_levels8.tif',
+		description: '',
+		options: {
+			type: 'image',
+			useChannel: 1,
+			useHeatMap: true,
+			colorScale: ['#fde725', '#5dc962', '#20908d', '#3a528b', '#440154'],
+			colorScaleValueRange: [1, 100, 200, 300, 366],
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 10000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_int16_heatmapCustomRange_Nepal_snow',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --config CHECK_DISK_FREE_SPACE=FALSE --nodata 0 --zoom-level 16',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/snow_cover_cog/SNOW_3857_2017-2021_cog_deflate_in16_zoom16_levels8.tif',
+		description: '',
+		options: {
+			type: 'image',
+			useChannel: 1,
+			useHeatMap: true,
+			colorScale: ['#fde725', '#5dc962', '#20908d', '#3a528b', '#440154'],
+			colorScaleValueRange: [1, 100, 200, 300, 366],
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 10000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_float32_heatmap_Nepal_slope',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16 ',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_slope_cog_deflate_float32_zoom16_levels8.tif',
+		description: '',
+		options: {
+			type: 'image',
+			useChannel: 0,
+			useHeatMap: true,
+			colorScale: ['#ffffff', '#feff51', '#fd8c3b', '#ff0037'],
+			colorScaleValueRange: [0, 15, 30, 45],
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 10000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_float32_heatmap_Nepal_dem',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_cog_deflate_float32_zoom16_levels8.tif',
+		description: '',
+		options: {
+			type: 'image',
+			useChannel: 0,
+			useHeatMap: true,
+			colorScale: ['#00883f', '#109435', '#20a02a', '#31ac1f', '#92b118', '#fab014', '#c88723', '#ac692c', '#af5a2d', '#c8846c', '#ffffff'],
+			colorScaleValueRange: [900, 1400,  1900, 2400, 2900, 3400, 3900, 4400, 4900, 5400, 5800],
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 10000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_float32_heatmap_clipLow_clipHigh_Nepal_dem',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_cog_deflate_float32_zoom16_levels8.tif',
+		description: '',
+		options: {
+			type: 'image',
+			useChannel: 0,
+			useHeatMap: true,
+			clipLow: 2000,
+			clipHigh: 5000,
+			colorScale: ['#00883f', '#109435', '#20a02a', '#31ac1f', '#92b118', '#fab014', '#c88723', '#ac692c', '#af5a2d', '#c8846c', '#ffffff'],
+			colorScaleValueRange: [900, 1400,  1900, 2400, 2900, 3400, 3900, 4400, 4900, 5400, 5800],
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 10000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_uint8_rgb_Nepal_sentinel',
+		type: 'rgbCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/sentinel_cog/2017-11-19-00_00_2017-11-19-23_59_Sentinel-2_L1C_SWIR_cog.tif',
+		description: '',
+		options: {
+			type: 'image',
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 10000,
+		},
+	},
 	// {
 	// 	key: 'efate_jpeg',
 	// 	type: 'rgbCOG',
