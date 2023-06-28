@@ -1,39 +1,40 @@
 import PropTypes from 'prop-types';
-import Map from '../common/Map/presentation';
-// import {TerrainLayer} from '@deck.gl/geo-layers';
+import {DeckGlMap} from '@gisatcz/ptr-maps';
 import geolib from '@gisatcz/deckgl-geolib';
+import {_WMSLayer as WMSLayer,
+} from '@deck.gl/geo-layers';
 
 const CogTerrainLayer = geolib.CogTerrainLayer;
-const CogRgb = ({url, view}) => {
-	const opacity = 0;
-	const geoObject = useGeoData(url, true, opacity);
-	const layers = [
-		new CogTerrainLayer({
-			id: 'terrain-layer',
-			elevationDecoder: {
-				rScaler: 6553.6,
-				gScaler: 25.6,
-				bScaler: 0.1,
-				offset: -10230,
-			},
-			material: {diffuse: 1},
-			meshMaxError: 3, // SET TO 1 FOR MAX QUALITY.
-			bounds: geoObject.bbox,
-			elevationData: geoObject.heightMap,
-			texture: geoObject.image,
-		}),
-	];
 
+import './style.scss';
+const CogHeight = ({url, view, options, bitmapUrl, bitmapOtions}) => {
+	const layerId = 'CogTerrainLayer';
+	console.log('xxx_url', url);
+	const layers = [new CogTerrainLayer(layerId, url, options, bitmapUrl, bitmapOtions)];
+	console.log('xxx_layers', layers);
 	return (
 		<div className={'APP-TEMPLATE-REPLACE-APP-STYLE-PREFIX-App ptr-light'}>
-			<Map layers={layers} view={view} />
+			<DeckGlMap
+				view={view}
+				backgroundLayer={{
+					key: 'background-osm',
+					type: 'wmts',
+					options: {
+						url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
+					},
+				}}
+				layers={layers}
+			></DeckGlMap>
 		</div>
 	);
 };
 
-CogRgb.propTypes = {
+CogHeight.propTypes = {
 	url: PropTypes.string,
 	view: PropTypes.object,
+	options: PropTypes.object,
+	bitmapUrl: PropTypes.object,
+	bitmapOtions: PropTypes.object
 };
 
-export default CogRgb;
+export default CogHeight;

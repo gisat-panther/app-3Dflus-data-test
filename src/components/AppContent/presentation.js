@@ -43,7 +43,10 @@ const AppContent = () => {
 						<CogHeight
 							// type={'jpeg'}
 							url={c[dataUrlDestination]}
+							options={c.options}
 							view={c.view}
+							bitmapUrl={c.bitmapUrl}
+							bitmapOtions={c.bitmapOptions}
 						/>
 					}
 				/>
