@@ -196,7 +196,7 @@ export default [
 			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16',
 		url_local: '',
 		url_public:
-			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/sentinel_cog/2017-11-19-00_00_2017-11-19-23_59_Sentinel-2_L1C_SWIR_cog.tif',
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/sentinel_cog/2017-11-19-00_00_2017-11-19-23_59_Sentinel-2_L1C_SWIR_cog_nodata.tif',
 		description: '',
 		options: {
 			type: 'image',
