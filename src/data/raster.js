@@ -232,6 +232,27 @@ export default [
 		},
 	},
 	{
+		key: 'rio_cogeo_deflate_uint16_global_DEM_no_overlay',
+		type: 'heightCOG',
+		creation:
+			'tbd',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/versions/v3/DEM/dtm.bareearth_ensemble_p10_250m_s_2018_go_epsg4326_v20230221_deflate_cog.tif',
+		description: '',
+		options: {
+			type: 'terrain',
+			multiplier: 0.1
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 20000,
+		},
+	},
+	{
 		key: 'rio_cogeo_deflate_float32_local_DEM_no_overlay',
 		type: 'heightCOG',
 		creation:
@@ -242,6 +263,47 @@ export default [
 		description: '',
 		options: {
 			type: 'terrain',
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 18000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_float32_local_DEM_snow_overlay',
+		type: 'heightCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16 --config CHECK_DISK_FREE_SPACE=FALSE',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_cog_deflate_float32_zoom16_levels8.tif',
+		description: '',
+		options: {
+			type: 'terrain',
+		},
+		view: {
+			center: {
+				lat: 28.104,
+				lon: 85.547,
+			}, //Melamchi, Nepal
+			boxRange: 18000,
+		},
+	},
+	{
+		key: 'rio_cogeo_deflate_float32_local_DEM_no_overlay_exaggeration',
+		type: 'heightCOG',
+		creation:
+			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16 --config CHECK_DISK_FREE_SPACE=FALSE',
+		url_local: '',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_cog_deflate_float32_zoom16_levels8.tif',
+		description: '',
+		options: {
+			type: 'terrain',
+			multiplier: 3,
 		},
 		view: {
 			center: {
