@@ -32,14 +32,6 @@ const Map = ({layers, view}) => {
 			...stateViewRef.current,
 			pitch: viewIn3D ? 0 : 60,
 			bearing: viewIn3D ? 0 : 0,
-			deckGlTransitionProperties: {
-				transitionInterpolator: new deckgl_core.LinearInterpolator([
-					'pitch',
-					'bearing',
-				]),
-				transitionDuration: 700,
-				onTransitionEnd: removeViewTransitionRef.current,
-			},
 		};
 		stateViewRef.current = stateUpdate;
 	};

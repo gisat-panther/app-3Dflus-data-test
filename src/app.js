@@ -1,7 +1,4 @@
 import Helmet from 'react-helmet';
-import {AnalyticsProvider} from 'use-analytics';
-
-import analytics from './utils/analytics';
 import {connects} from '@gisatcz/ptr-state';
 import {AppContainer} from '@gisatcz/ptr-components';
 
@@ -29,11 +26,9 @@ const AppWrapper = () => {
 	return (
 		<>
 			<Helmet defaultTitle="APP-TEMPLATE-REPLACE-APP-TITLE" />
-			<AnalyticsProvider instance={analytics}>
-				<ConnectedAppContainer appKey={appKey}>
-					<AppContent />
-				</ConnectedAppContainer>
-			</AnalyticsProvider>
+			<ConnectedAppContainer appKey={appKey}>
+				<AppContent />
+			</ConnectedAppContainer>
 		</>
 	);
 };
