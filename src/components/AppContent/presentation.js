@@ -4,6 +4,7 @@ import rasterDataConfig from '../../data/raster';
 
 import CogRgb from '../CogRgb';
 import CogHeight from '../CogHeight';
+import CogHeightAndVector from '../CogHeightAndVector';
 import Vector from '../Vector';
 
 import './style.scss';
@@ -15,6 +16,7 @@ import './style.scss';
 const AppContent = () => {
 	// const dataUrlDestination = 'url_local';
 	const dataUrlDestination = 'url_public';
+	const dataVectorUrlDestination = 'vectorUrl';
 	const rasterPathPrefix = 'map/raster/';
 	const rasterRoutes = rasterDataConfig.map(c => {
 		if (c.type === 'rgbCOG') {
@@ -43,6 +45,25 @@ const AppContent = () => {
 						<CogHeight
 							// type={'jpeg'}
 							url={c[dataUrlDestination]}
+							options={c.options}
+							view={c.view}
+							bitmapUrl={c.bitmapUrl}
+							bitmapOtions={c.bitmapOptions}
+						/>
+					}
+				/>
+			);
+		} else if (c.type === 'heightAndTiledVectors') {
+			return (
+				<Route
+					key={c.key}
+					exact
+					path={`${rasterPathPrefix}${c.key}`}
+					element={
+						<CogHeightAndVector
+							// type={'jpeg'}
+							url={c[dataUrlDestination]}
+							vectorUrl={c[dataVectorUrlDestination]}
 							options={c.options}
 							view={c.view}
 							bitmapUrl={c.bitmapUrl}

@@ -386,23 +386,31 @@ export default [
 	// 		boxRange: 4000,
 	// 	},
 	// },
-	// {
-	// 	key: 'manila_height_deflate',
-	// 	type: 'heightCOG',
-	// 	creation:
-	// 		'gdal_translate pamzam_10m_Mercator_COG.tif pamzam_10m_Mercator_COG_height.tif -of COG -co COMPRESS=DEFLATE -co TILING_SCHEME=GoogleMapsCompatible',
-	// 	url_local:
-	// 		'/app-3Dflus-data-test/static/data/pamzam_10m_Mercator_COG_height_packbits.tif',
-	// 	url_public:
-	// 		'https://gisat-gis.eu-central-1.linodeobjects.com/eman/ortofoto/efate_packbits.tif',
-	// 	description: '',
-	// 	view: {
-	// 		center: {lat: 14.5991729, lon: 120.9089351},
-	// 		boxRange: 4000,
-	// 		pitch: 0,
-	// 		bearing: 0,
-	// 	},
-	// },
+	{
+		key: 'manila_height_and_tiled_vector',
+		type: 'heightAndTiledVectors',
+		creation:
+			'gdal_translate pamzam_10m_Mercator_COG.tif pamzam_10m_Mercator_COG_height.tif -of COG -co COMPRESS=DEFLATE -co TILING_SCHEME=GoogleMapsCompatible',
+		url_local:
+			'/app-3Dflus-data-test/static/data/pamzam_10m_Mercator_COG_height_packbits.tif',
+		url_public:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/versions/v3/DEM/luzon_dem_deflate_cog.tif',
+		description: '',
+		bitmapUrl:
+			'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoiam9ldmVjeiIsImEiOiJja3lpcms5N3ExZTAzMm5wbWRkeWFuNTA3In0.dHgiiwOgD-f7gD7qP084rg',
+		options: {
+			type: 'terrain',
+			multiplier: 3,
+		},
+		vectorUrl:
+			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/mvt/142_decimated_2/{z}/{x}/{y}.mvt',
+		view: {
+			center: {lat: 14.5991729, lon: 120.9089351},
+			boxRange: 4000,
+			pitch: 0,
+			bearing: 0,
+		},
+	},
 	{
 		key: 'vector_01',
 		type: 'vector',
