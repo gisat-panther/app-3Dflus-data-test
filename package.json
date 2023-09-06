@@ -76,7 +76,7 @@
 		"proxy": "lcp --proxyUrl https://dromas-dev.gisat.cz --port 4444 --origin http://localhost:3000 --proxyPartial \"\" --credentials",
 		"start": "react-app-rewired start",
 		"predeploy": "npm run build && rimraf build/static/data",
-		"deploy": "gh-pages -b gh-pages -d build",
+		"deploy": "gh-pages -b gh-pages -d build -u 'github-actions-bot <support+actions@github.com>'",
 		"build": "cross-env NODE_ENV=production react-app-rewired build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
