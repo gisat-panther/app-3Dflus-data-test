@@ -12,7 +12,7 @@ import './style.scss';
 import {useRef, useState} from 'react';
 
 const Map = ({layers, view}) => {
-	const [viewIn3D, setViewIn3D] = useState(false);
+	const [viewIn3D, setViewIn3D] = useState(view.pitch > 0);
 	const [stateVersion, setStateVersion] = useState(0);
 	const stateViewRef = useRef(view);
 

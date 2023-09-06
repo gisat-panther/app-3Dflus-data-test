@@ -405,9 +405,9 @@ export default [
 		vectorUrl:
 			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/mvt/142_decimated_2/{z}/{x}/{y}.mvt',
 		view: {
-			center: {lat: 14.5991729, lon: 120.9089351},
-			boxRange: 4000,
-			pitch: 0,
+			center: {lat: 14.65, lon: 121.11},
+			boxRange: 11586,
+			pitch: 60,
 			bearing: 0,
 		},
 	},
