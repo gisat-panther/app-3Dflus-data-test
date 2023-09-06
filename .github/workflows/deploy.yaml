@@ -31,5 +31,6 @@ jobs:
 
             - name: deploy
               run: |
-                  npm ci
-                  npm run deploy
+                  npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
