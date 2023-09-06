@@ -279,6 +279,7 @@ export default [
 				lon: 85.547,
 			}, //Melamchi, Nepal
 			boxRange: 20000,
+			pitch: 60
 		},
 	},
 	{
@@ -299,6 +300,7 @@ export default [
 				lon: 85.547,
 			}, //Melamchi, Nepal
 			boxRange: 18000,
+			pitch: 60
 		},
 	},
 	{
@@ -328,9 +330,7 @@ export default [
 			'rio cogeo create --cog-profile=deflate --blocksize=256 --overview-blocksize=256 --web-optimized --aligned-levels=8 --dtype=float32 --zoom-level=16 --config CHECK_DISK_FREE_SPACE=FALSE',
 		url_local: '',
 		url_public:
-			// 'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_cog_deflate_float32_zoom16_levels8.tif',
-			// 'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_cog_deflate_float32_zoom16_levels8.tif',
-			'https://gisat-gis.eu-central-1.linodeobjects.com/eman/versions/V3/DEM/luzon_dem_deflate_cog_uint32.tif',
+			'https://gisat-gis.eu-central-1.linodeobjects.com/esaGdaAdbNepal23/rasters/copdem_cog/copdem_cog_deflate_float32_zoom16_levels8.tif',
 		description: '',
 		options: {
 			type: 'terrain',
@@ -342,6 +342,7 @@ export default [
 				lon: 85.547,
 			}, //Melamchi, Nepal
 			boxRange: 18000,
+			pitch: 60
 		},
 	},
 	// {
