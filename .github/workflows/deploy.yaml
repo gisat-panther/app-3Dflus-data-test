@@ -31,4 +31,5 @@ jobs:
 
             - name: deploy
               run: |
+                  npm ci
                   npm run deploy
