@@ -96,6 +96,13 @@ const CogHeight = ({
 }) => {
 	const layerId = 'CogTerrainLayer';
 	const layers = [
+		new deckgl_geolayers._WMSLayer({
+			data: 'https://ows.terrestris.de/osm/service',
+			serviceType: 'wms',
+			layers: ['OSM-WMS'],
+			extensions: [new TerrainExtension()],
+			terrainDrawMode: 'drape',
+		}),
 		new CogTerrainLayer(layerId, url, options, bitmapUrl, bitmapOtions),
 		new deckgl_geolayers.MVTLayer({
 			data: vectorUrl,
